@@ -96,7 +96,7 @@ function drawVisualization() {
                 let y1 = positions[i].y + (noise(noiseOffset * (i + 1000)) - 0.5) * noiseLevel;
                 let x2 = positions[j].x + (noise(noiseOffset * j) - 0.5) * noiseLevel;
                 let y2 = positions[j].y + (noise(noiseOffset * (j + 1000)) - 0.5) * noiseLevel;
-                line(x1, y1, x2, y2);
+                line(x1 - 5, y1 - 15, x2 - 5, y2 - 15);
                 connections++;
             }
         }

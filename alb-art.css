@@ -538,6 +538,10 @@ button:hover {
         border-bottom: none;
     }
 
+    .header::after {
+        display: none;
+    }
+
     .title-art {
         margin-top: 20px;
     }
@@ -595,6 +599,11 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+
+    .header::after {
+        display: none;
+    }
+
     .main h1 {
         font-size: 2rem;
     }
