@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>AlphaBrate Art</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="../../alb-art.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js"></script>
+</head>
+
+<body>
+    <a href="#main" class="skip-main">Skip to main content</a>
+    <div data-scroll-container>
+        <div class="header image-no-touch">
+            <div class="logo">Gallery
+                <a href="../../" class="header-logo">
+                    <img src="../../assets/logo/light.webp" alt="Art" class="show-in-light image-no-touch">
+                    <img src="../../assets/logo/dark.webp" alt="Art" class="show-in-dark image-no-touch">
+                </a>
+            </div>
+            <div>
+                <a href="../">Gallery</a>
+                <a href="../../collections">Collections</a>
+                <a href="/about">Our Vision</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+        <div class="main" id="main">
+            <h1>
+                <div class="visually-hidden">Art</div>
+                <img src="../../assets/logo/light.svg" alt="Art" class="show-in-light image-no-touch title-art">
+                <img src="../../assets/logo/dark.svg" alt="Art" class="show-in-dark image-no-touch title-art">
+                <span class="op-40 image-no-touch">@</span>AlphaBrate
+            </h1>
+            <div class="collection">
+                <div class="info">
+                    <h2>Threads of Fate</h2>
+                    <p>Lines of connection weave a tapestry of meaning, where words dance in harmony. This generative
+                        art piece transforms text into a visual symphony, inviting you to explore the intricate
+                        relationships between words. Each connection tells a story, creating a unique artwork that
+                        resonates with your imagination.
+                    </p>
+                </div>
+                <a href="../../arts/Threads of Fate - The Old Man and The Sea.png" class="work-display"
+                    data-scroll data-scroll-speed="1.5">
+                    <img src="../../assets/art-previews/Threads of Fate - The Old Man and The Sea - Preview.webp"
+                        alt="The Old Man and The Sea - Generative artwork by AlphaBrate" class="image-no-touch">
+                    <div class="bg-blur"></div>
+                    <div class="controls">
+                        <span class="work-title">
+                            <h3 data-auto-font-size>The Old Man and The Sea</h3>
+                        </span>
+                    </div>
+                    <p class="work-description image-no-touch">
+                        Tap on the card to make your own artwork!
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>
+                Copyright &copy; <span class="date-now" data-date="year">2025</span> <a href="/">AlphaBrate</a>.
+            </div>
+            <div>
+                All rights reserved except for the images posted in the gallery.
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="../../alb-art.js"></script>
+    <script>
+        (function () {
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
+                multiplier: 1,
+                lerp: 0.1
+            });
+
+            // Handle skip link
+            document.querySelector('.skip-main').addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector('#main');
+                target.focus();
+                scroll.scrollTo(target);
+            });
+
+            // Update scroll on resize
+            window.addEventListener('resize', () => scroll.update());
+        })();
+    </script>
+</body>
+
+</html>

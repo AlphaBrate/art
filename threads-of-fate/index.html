@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <title>Text Visualization Connector</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../alb-art.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js"></script>
+</head>
+
+<body>
+    <a href="#main" class="skip-main">Skip to main content</a>
+    <div class="header">
+        <div class="logo">Threads of Fate
+            <a href="../" class="header-logo">
+                <img src="../assets/logo/light.webp" alt="Art" class="show-in-light image-no-touch">
+                <img src="../assets/logo/dark.webp" alt="Art" class="show-in-dark image-no-touch">
+            </a>
+        </div>
+        <div>
+            <a href="../gallery">Gallery</a>
+            <a href="../collections">Collections</a>
+            <a href="/about">Our Vision</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div class="main" id="main">
+        <h1>Threads of Fate</h1>
+        <div class="content">
+            <div class="info">
+                <h2>A Tool for Creative Connections</h2>
+                <p>Text Connector transforms text into visual art by connecting specified words with lines, inspired by
+                    generative design. Customize your creation and download the result to explore the interplay of words
+                    and patterns.</p>
+                <a href="../gallery/threads-of-fate/">
+                    <button>Gallery</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <h2>Visualize Your Text</h2>
+        <form id="textForm">
+            <div class="form-group">
+                <label for="inputText">Paste Your Text:</label>
+                <textarea id="inputText" rows="6"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="wordsToConnect">Words to Connect (comma-separated, e.g., Romeo,Juliet):</label>
+                <input type="text" id="wordsToConnect" placeholder="e.g., Romeo,Juliet">
+            </div>
+            <div class="form-group">
+                <label for="maxConnections">Max Connections (0 for all):</label>
+                <input type="number" id="maxConnections" min="0" value="0">
+            </div>
+            <div class="form-group">
+                <label for="lineColor">Line Color:</label>
+                <input type="color" id="lineColor" value="#ff0000">
+            </div>
+            <div class="form-group">
+                <label for="lineAlpha">Line Alpha (0-255):</label>
+                <input type="number" id="lineAlpha" min="0" max="255" value="255">
+            </div>
+            <div class="form-group">
+                <label for="lineThickness">Line Thickness:</label>
+                <input type="number" id="lineThickness" min="1" max="10" value="1">
+            </div>
+            <div class="form-group">
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="fontColor">Font Color:</label>
+                <input type="color" id="fontColor" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="fontSelect">Font:</label>
+                <select id="fontSelect">
+                    <option value="EB Garamond">EB Garamond</option>
+                    <option value="Playfair Display">Playfair Display</option>
+                    <option value="Open Sans">Open Sans</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="noiseLevel">Noise Level (0-100):</label>
+                <input type="number" id="noiseLevel" min="0" max="100" value="0">
+            </div>
+            <div class="form-group">
+                <label for="fontSize">Font Size (1-50):</label>
+                <input type="range" id="fontSize" min="1" max="100" value="16">
+            </div>
+            <div class="form-group">
+                <label for="resolution">Resolution (1%-100%):</label>
+                <input type="range" id="resolution" min="1" max="100" value="100">
+            </div>
+            <div class="form-buttons">
+                <button type="button" id="downloadBtn" class="special">Generate Visualization</button>
+                <button type="button" id="confirmDownloadBtn">Download as PNG</button>
+            </div>
+        </form>
+        <div id="canvas-container"></div>
+    </div>
+
+    <div class="footer">
+        <div>
+            Copyright &copy; <span class="date-now" data-date="year">2025</span> <a href="/">AlphaBrate</a>.
+        </div>
+        <div>
+            All rights reserved except for the images posted in the gallery.
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <script src="sketch.js"></script>
+</body>
+
+</html>

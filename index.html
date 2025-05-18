@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>AlphaBrate Art</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="alb-art.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js"></script>
+</head>
+
+<body>
+    <a href="#main" class="skip-main">Skip to main content</a>
+    <div data-scroll-container>
+        <div class="header image-no-touch">
+            <div class="logo">AlphaBrate
+                <span class="header-logo">
+                    <img src="assets/logo/light.webp" alt="Art" class="show-in-light image-no-touch">
+                    <img src="assets/logo/dark.webp" alt="Art" class="show-in-dark image-no-touch">
+                </span>
+            </div>
+            <div>
+                <a href="./gallery">Gallery</a>
+                <a href="./collections">Collections</a>
+                <a href="/about">Our Vision</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+        <div class="main" id="main">
+            <h1>
+                <div class="visually-hidden">Art</div>
+                <img src="assets/logo/light.svg" alt="Art" class="show-in-light image-no-touch title-art">
+                <img src="assets/logo/dark.svg" alt="Art" class="show-in-dark image-no-touch title-art">
+                <span class="op-40 image-no-touch">@</span>AlphaBrate
+            </h1>
+            <div class="content">
+                <div class="info">
+                    <h2>A Canvas of Delightful Inspiration</h2>
+                    <p>AlphaBrate Art weaves a tapestry of joy through exquisite creations. Our handpicked collections,
+                        infused with the magic of generative artistry by our team, beckon you to a realm of wonder. We
+                        craft
+                        each piece to ignite your imagination and elevate the spirit through the beauty of art.</p>
+                    <p>We believe art should be felt by everyone, bringing moments of inspiration and joy. Yet in
+                        today’s
+                        fast-paced world, finding time for creativity can be a challenge. At AlphaBrate Art, we make
+                        artistry effortless—integrating beauty into daily life so you can experience wonder without
+                        pause.
+                    </p>
+                </div>
+                <img src="assets/art-previews/Serenity's Flow - Preview.webp" alt="Featured artwork from AlphaBrate Art"
+                    data-scroll data-scroll-speed="1" class="image-no-touch">
+            </div>
+        </div>
+        <div class="collection">
+            <div class="info">
+                <h2>Generative Artistry Unveiled</h2>
+                <p>
+                    Art mirrors the world, and at AlphaBrate Art, we celebrate generative artistry. Through
+                    algorithms—not
+                    AI—we create unique, inspired pieces. Our approach allows anyone to experience the essence of art
+                    effortlessly, even without traditional craftsmanship.
+                </p>
+            </div>
+
+            <a href="./threads-of-fate/" class="work-display" data-scroll data-scroll-speed="1.5">
+                <img src="assets/art-previews/Threads of Fate - The Old Man and The Sea - Preview.webp"
+                    alt="Generative artwork by AlphaBrate" class="image-no-touch">
+                <div class="bg-blur"></div>
+                <div class="controls">
+                    <span class="work-title">
+                        <h3>Threads of Fate</h3>
+                    </span>
+                </div>
+                <p class="work-description image-no-touch">
+                    Tap on the card to make your own artwork!
+                </p>
+            </a>
+        </div>
+
+        <div class="footer">
+            <div>
+                Copyright &copy; <span class="date-now" data-date="year">2025</span> <a href="/">AlphaBrate</a>.
+            </div>
+            <div>
+                All rights reserved except for the images posted in the gallery.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="alb-art.js"></script>
+    <script>
+        (function () {
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
+                multiplier: 1,
+                lerp: 0.1
+            });
+
+            // Handle skip link
+            document.querySelector('.skip-main').addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector('#main');
+                target.focus();
+                scroll.scrollTo(target);
+            });
+
+            // Update scroll on resize
+            window.addEventListener('resize', () => scroll.update());
+        })();
+    </script>
+</body>
+
+</html>
