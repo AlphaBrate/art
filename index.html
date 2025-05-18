@@ -27,7 +27,7 @@
             <div>
                 <a href="./gallery">Gallery</a>
                 <a href="./collections">Collections</a>
-                <a href="/about">Our Vision</a>
+                <a href="./our-vision/">Our Vision</a>
                 <a href="/contact">Contact</a>
             </div>
         </div>
@@ -94,27 +94,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="alb-art.js"></script>
-    <script>
-        (function () {
-            const scroll = new LocomotiveScroll({
-                el: document.querySelector('[data-scroll-container]'),
-                smooth: true,
-                multiplier: 1,
-                lerp: 0.1
-            });
-
-            // Handle skip link
-            document.querySelector('.skip-main').addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector('#main');
-                target.focus();
-                scroll.scrollTo(target);
-            });
-
-            // Update scroll on resize
-            window.addEventListener('resize', () => scroll.update());
-        })();
-    </script>
 </body>
 
 </html>

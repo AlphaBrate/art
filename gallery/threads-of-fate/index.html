@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>AlphaBrate Art</title>
+    <title>Threads of Fate | Gallery - AlphaBrate Art</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
@@ -27,7 +27,7 @@
             <div>
                 <a href="../">Gallery</a>
                 <a href="../../collections">Collections</a>
-                <a href="/about">Our Vision</a>
+                <a href="../../our-vision/">Our Vision</a>
                 <a href="/contact">Contact</a>
             </div>
         </div>
@@ -46,20 +46,33 @@
                         relationships between words. Each connection tells a story, creating a unique artwork that
                         resonates with your imagination.
                     </p>
+                    <a href="../../threads-of-fate/">
+                        <button>Generate an art</button>
+                    </a>
                 </div>
-                <a href="../../arts/Threads of Fate - The Old Man and The Sea.png" class="work-display"
-                    data-scroll data-scroll-speed="1.5">
+            </div>
+            <div class="collection">
+                <a href="../../arts/Threads of Fate - The Old Man and The Sea.png" class="work-display" data-scroll
+                    data-scroll-speed="1.5">
                     <img src="../../assets/art-previews/Threads of Fate - The Old Man and The Sea - Preview.webp"
                         alt="The Old Man and The Sea - Generative artwork by AlphaBrate" class="image-no-touch">
                     <div class="bg-blur"></div>
                     <div class="controls">
                         <span class="work-title">
-                            <h3 data-auto-font-size>The Old Man and The Sea</h3>
+                            <h3 data-auto-font-size data-font-size-min-syt-id="artwork">The Old Man and The Sea</h3>
                         </span>
                     </div>
-                    <p class="work-description image-no-touch">
-                        Tap on the card to make your own artwork!
-                    </p>
+                </a>
+                <a href="../../arts/Threads of Fate - Romeo and Juliet.png" class="work-display" data-scroll
+                    data-scroll-speed="1.5">
+                    <img src="../../assets/art-previews/Threads of Fate - Romeo and Juliet - Preview.webp"
+                        alt="Romeo and Juliet - Generative artwork by AlphaBrate" class="image-no-touch">
+                    <div class="bg-blur"></div>
+                    <div class="controls">
+                        <span class="work-title">
+                            <h3 data-auto-font-size data-font-size-min-syt-id="artwork">Romeo and Juliet</h3>
+                        </span>
+                    </div>
                 </a>
             </div>
         </div>
@@ -76,27 +89,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="../../alb-art.js"></script>
-    <script>
-        (function () {
-            const scroll = new LocomotiveScroll({
-                el: document.querySelector('[data-scroll-container]'),
-                smooth: true,
-                multiplier: 1,
-                lerp: 0.1
-            });
-
-            // Handle skip link
-            document.querySelector('.skip-main').addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector('#main');
-                target.focus();
-                scroll.scrollTo(target);
-            });
-
-            // Update scroll on resize
-            window.addEventListener('resize', () => scroll.update());
-        })();
-    </script>
+    
 </body>
 
 </html>

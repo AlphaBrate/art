@@ -106,6 +106,16 @@ a.skip-main:active {
     color: #222;
 }
 
+p::selection {
+    background: #b3d4fc50;
+    color: #222;
+}
+
+p::-moz-selection {
+    background: #b3d4fc50;
+    color: #222;
+}
+
 @media (prefers-color-scheme: dark) {
     .show-in-dark {
         display: block;
@@ -155,6 +165,12 @@ body {
 .header .logo img {
     height: 45px;
     margin-left: 10px;
+}
+
+
+.logo a {
+    margin-left: 0 !important;
+    padding: 0;
 }
 
 .header a {
@@ -218,10 +234,24 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+
+.no-ambient {
+    animation: none !important;
+}
+
+.no-shadow {
+    box-shadow: none !important;
+}
+
+.full-width {
+    width: 100%;
+}
+
 .collection {
     padding: 50px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .collection h2 {
